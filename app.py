@@ -75,9 +75,12 @@ if df is not None:
     st.title(main_title)
 
     # 顶部搜索框
-    col1, col2 = st.columns([3, 1])
+    col1, col2 = st.columns([5, 1])
     with col1:
         keyword = st.text_input("Search", placeholder=search_placeholder, label_visibility="collapsed")
+    with col2:
+        # 添加搜索按钮，点击按钮也会触发页面刷新，从而执行搜索
+        st.button("Search" if language == "English" else "搜索")
     
     st.markdown("---")
 
